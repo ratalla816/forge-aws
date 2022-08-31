@@ -1,0 +1,33 @@
+{{>nav-active-panel}}
+<main>
+
+    <!-- SCROLL -->
+    {{!-- <div class="scroll" data-rate=".3" data-direction="vertical"> --}}
+        <div class="wrapper">
+            <div class="container">
+
+                {{>left-panel}}
+
+                <div class="middle-panel" data-aos="fade-in">
+                    <div class="post create">
+                        <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
+                    </div>
+
+                    {{#each posts as |post|}}
+
+                    {{> post-info post }}
+
+
+                    {{else}}
+                    <h6 style="margin-top: 20px;font-size:30px;">there are currently no posts</h6>
+                    {{/each}}
+
+                </div>
+
+                {{>right-panel}}
+            </div>
+        </div>
+
+</main>
+
+<script src="/javascript/profile.js"></script>

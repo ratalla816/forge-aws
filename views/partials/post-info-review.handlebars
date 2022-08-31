@@ -1,0 +1,41 @@
+<div id="issues-container" class="list-group">
+    <div class="post">
+        <div class="post-top">
+            <div class="">
+                <i class="fas fa-user" style="font-size:24px;color:black;margin-bottom: 24px;
+    margin-left: -2px;" alt="users icon"></i>
+            </div>
+            <div class="post-info">
+                <p class="name" style="font-size:24px;color:black;">{{user.name}}</p>
+                <span class="time" style="font-size:24px;color:black;">{{format_date created_at}}</span>
+            </div>
+        </div>
+        <div>
+            <header class="post-header post-header-title" style="margin-left: 0.6875rem;">
+                <a href="/post/{{id}}">{{title}}</a>
+            </header>
+
+            <div class="post-content"><a target="_blank" href="{{post_url}}">{{post_url}}</a></div>
+
+            <div class="post-content .body">{{post_body}}</div>
+        </div>
+
+        <div class="post-bottom">
+            <div class="action" style="color:black;">
+                <i class="far fa-thumbs-up" alt="likes icon"></i>
+                <span>{{likes_count}} {{format_plural "like" likes_count}}</span>
+
+            </div>
+            <div class="action">
+                <a href="/post/{{id}}">
+                    <i class="far fa-comment" alt="comments icon"></i>
+                    <span>{{comments.length}} {{format_plural "comment" comments.length}}</span>
+                </a>
+            </div>
+            {{!-- <div class="action">
+                <i class="fa fa-share"></i>
+                <span>Share</span> --}}
+            </div>
+        </div>
+    </div>
+</div>
